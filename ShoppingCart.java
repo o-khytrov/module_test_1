@@ -146,17 +146,20 @@ public class ShoppingCart{
     private static int calculateDiscount(Item item){
         int discount = 0;
         switch (item.type) {
-            case Item.Type.SECOND:
+            case SECOND:
                 if (item.quantity > 1)
                     discount = 50;
                 break;
-            case Item.Type.DISCOUNT:
+            case DISCOUNT:
                 discount = 10 + item.quantity / 10 * 10;
                 if (discount > 50)
                     discount = 50;
                 break;
-            case Item.Type.SALE:
+            case SALE:
                 discount = 90;
+                break;
+            default:
+                break;
         }
         discount += item.quantity / 100 * 10;
         if (discount > 80)
