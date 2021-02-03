@@ -1,5 +1,6 @@
 public class Item {
-    public enum Type { SECOND, REGULAR, SALE, DISCOUNT };
+    public enum Type { SECOND, REGULAR, SALE, DISCOUNT }
+
     public String title;
     public double price;
     public int quantity;

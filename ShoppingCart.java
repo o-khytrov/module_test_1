@@ -125,7 +125,7 @@ public class ShoppingCart{
      */
     private static void appendPaddedLeft(StringBuffer sb, String str, int width){
         if (str.length() > width) {
-            sb.append(str.substring(0, width-3));
+            sb.append(str, 0, width-3);
             sb.append("...");
         } else {
             sb.append(str);
@@ -143,7 +143,7 @@ public class ShoppingCart{
      * For Item.Type.SALE discount is 90%
      * For each full 100 items item gets additional 10%, but not more than 80% total
      */
-    private static int calculateDiscount(Item item){
+    public static int calculateDiscount(Item item){
         int discount = 0;
         switch (item.type) {
             case SECOND:
@@ -168,5 +168,5 @@ public class ShoppingCart{
     }
 
     /** Container for added items */
-    private List items = new ArrayList();
+    private final List items = new ArrayList();
 }
