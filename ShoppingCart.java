@@ -84,7 +84,7 @@ public class ShoppingCart{
              appendPaddedRight(sb, String.valueOf(item.quantity), 4);
              sb.append(" ");
              if (discount == 0)
-                 sb.append(" -");
+                appendPaddedRight(sb, " -", 8);
              else {
                  appendPaddedRight(sb, String.valueOf(discount), 7);
                  sb.append("%");
